@@ -5,7 +5,7 @@ import img from '../../assets/img/hero - Copy.png'
 import cv from '../../assets/Damilola-Vincent_Cv-upd.pdf'
 import Header from '../header';
 import EmailPopup from '../../components/Banner';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 const ResumeSection: React.FC = () => {
   // State to trigger animations once the component is mounted
@@ -39,14 +39,16 @@ const ResumeSection: React.FC = () => {
               </div>
             </div>
             {/* Download Resume Button */}
-            <div className="mt-4 md:mt-0">
-              <Link to={cv}
-                download="Damilola_Vincent_Resume.pdf"
-                className="flex items-center px-4 py-2 bg-purple-600 text-white  hover:bg-purple-500 shadow transition"
-              >
-                <FaDownload className="mr-2" />  Download Resume
-              </Link>
-            </div>
+         <div className="mt-4 md:mt-0">
+  <a
+    href={cv}
+    download
+    className="flex items-center px-4 py-2 bg-purple-600 text-white hover:bg-purple-500 shadow transition"
+  >
+    <FaDownload className="mr-2" /> Download Resume
+  </a>
+</div>
+
           </div>
 
           {/* Dashboard Content */}
