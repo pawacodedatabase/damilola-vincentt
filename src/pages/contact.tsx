@@ -5,6 +5,7 @@ import cv from '../assets/Damilola-Vincent_Cv-upd.pdf'; // Replace with your act
 import 'animate.css'; // Make sure animate.css is properly imported
 import FormComponent from '../components/formComponent';
 import Header from './header';
+import { Link } from 'react-router-dom';
 
 const ContactDashboard: React.FC = () => {
   const [user, setUser] = useState<any>(null);
@@ -111,12 +112,12 @@ const ContactDashboard: React.FC = () => {
 
         {/* Download Resume Button */}
         <div className="mt-8 text-center">
-          <a href={cv} download>
+         <Link to={cv} download>
             <button className="flex items-center justify-center bg-purple-600 text-white py-3 px-6  hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-green-500 transition-all duration-300">
               <FiDownload className="w-5 h-5 mr-2" />
               Download Resume
-            </button>
-          </a>
+         </button> </Link>
+         
         </div>
       </div>
     </>
