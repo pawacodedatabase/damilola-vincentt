@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@keyframes fade-in-left {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fade-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .animate-fade-in-left {
+    animation: fade-in-left 0.6s ease-out forwards;
+  }
+  
+  .animate-fade-in-right {
+    animation: fade-in-right 0.6s ease-out forwards;
+  }
+  
+
+  /* Add this to your global CSS file or Tailwind config file */
+@keyframes typewriter {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-typewriter {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid rgba(255, 255, 255, 0.75);
+  width: 0;
+  animation: typewriter 3s steps(30) 1s forwards;
+}
+
+
+/* === removing default button style ===*/
+.button {
+  margin: 0;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  text-transform: uppercase;
+  font-size: 1.5rem; /* Adjust as needed */
+  font-family: "Arial", sans-serif;
+  color: #fff; /* Default text color for light mode */
+  letter-spacing: 3px;
+  padding: 12px 20px;
+  border: 2px solid #fff; /* Border to make the button visible */
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Button hover text effect */
+.button .hover-text {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: transparent;
+  width: 0%;
+  inset: 0;
+  border-right: 6px solid #37FF8B; /* Animation border */
+  overflow: hidden;
+  transition: width 0.5s ease;
+  -webkit-text-stroke: 1px #37FF8B;
+}
+
+/* Hover effect */
+.button:hover .hover-text {
+  width: 100%;
+  filter: drop-shadow(0 0 23px #37FF8B);
+}
+
+.button:hover {
+  color: #37FF8B; /* Text color on hover */
+  background-color: transparent; /* Keep button background transparent */
+  border: 2px solid #37FF8B; /* Border color on hover */
+}
+
+/* Dark mode adjustments */
+body.dark-mode .button {
+  color: #fff; /* Text color in dark mode */
+  border: 2px solid #fff; /* Border color in dark mode */
+}
+
+body.dark-mode .button:hover {
+  color: #37FF8B; /* Hover text color in dark mode */
+  border: 2px solid #37FF8B; /* Hover border in dark mode */
+}
+
+body.dark-mode .button .hover-text {
+  -webkit-text-stroke: 1px #37FF8B; /* Dark mode hover effect */
+}
+
+
+.nav-link {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: currentColor;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.loader {
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  border-top: 4px solid white;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
